@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>UI/Assets/tesla.jpg</file>
+        <file>UI/Assets/car-insurance.png</file>
+        <file>UI/Assets/car-icon.png</file>
+    </qresource>
+</RCC>

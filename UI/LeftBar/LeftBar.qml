@@ -16,7 +16,7 @@ Rectangle
         source:"qrc:/UI/Assets/tesla.jpg"
         anchors.centerIn:parent
         fillMode:Image.PreserveAspectFit
-        width:parent.width*0.9
+        width:parent.width*0.95
 
     }
 }

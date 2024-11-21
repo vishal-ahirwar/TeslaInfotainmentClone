@@ -12,11 +12,12 @@ Rectangle
     height:parent.height/12
         Image
         {
+            id:carSettingIcon
             anchors
             {
                 left:parent.left
                 verticalCenter:parent.verticalCenter
-                margins:10
+                margins:25
             }
 
             source:"qrc:/UI/Assets/car-icon.png"
@@ -24,7 +25,6 @@ Rectangle
             height:parent.height*0.5
 
         }
-
 
 
 }

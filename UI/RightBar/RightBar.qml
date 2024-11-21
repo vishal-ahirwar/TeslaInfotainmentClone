@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtLocation
 import QtPositioning
+
 Rectangle
 {
 
@@ -8,21 +9,6 @@ Rectangle
         Plugin {
             id: mapPlugin
             name:"osm"
-            parameters:[
-                PluginParameter {
-                    name: "osm.mapping.providersrepository.disabled"
-                    value: "false"
-                },
-                PluginParameter {
-                    name: "osm.mapping.providersrepository.address"
-                   value: "https://www.opencyclemap.org/"
-                },
-                PluginParameter {
-                    name: "osm.mapping.providersrepository.apiKey"
-                    value: ""
-                }
-            ]
-
         }
         WheelHandler {
                    id: wheel
@@ -74,6 +60,50 @@ Rectangle
                 grabPermissions: PointerHandler.TakeOverForbidden
             }
     }
+    Row
+    {   anchors
+        {
+            top:parent.top
+            left:parent.left
+            margins:25
+        }
+        width: parent.width*0.2
+
+        spacing: 25
+        Image {
+            id: lockIcon
+            source: systemHandler.carLocked? "qrc:/UI/Assets/lock.png":"qrc:/UI/Assets/unlock.png"
+            width:parent.width/8
+            fillMode: Image.PreserveAspectFit
+            verticalAlignment: Image.AlignVCenter
+            MouseArea
+            {
+                anchors.fill: parent
+                onClicked:
+                {
+                    systemHandler.setCarLocked(!systemHandler.carLocked)
+                }
+            }
+        }
+
+        Text
+        {
+            text:systemHandler.temprature
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 18
+            height: lockIcon.height
+        }
+
+        Text
+        {
+            text:systemHandler.name
+            font.pixelSize: 18
+            verticalAlignment: Text.AlignVCenter
+
+        }
+    }
+
+
     anchors
     {
         right:parent.right

@@ -3,5 +3,7 @@
         <file>UI/Assets/tesla.jpg</file>
         <file>UI/Assets/car-insurance.png</file>
         <file>UI/Assets/car-icon.png</file>
+        <file>UI/Assets/lock.png</file>
+        <file>UI/Assets/unlock.png</file>
     </qresource>
 </RCC>

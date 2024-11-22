@@ -7,6 +7,11 @@ Window {
     height: 680
     visible: true
     title: qsTr("Tesla Infotainment")
+    Component.onCompleted:function()
+    {
+        showFullScreen()
+    }
+
     BottomBar
     {
         id:bottomBar

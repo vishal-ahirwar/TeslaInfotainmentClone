@@ -20,6 +20,7 @@ qt_add_qml_module(appTeslaInfotainmentClone
         QML_FILES UI/BottomBar/BottomBar.qml
         QML_FILES UI/LeftBar/LeftBar.qml
         QML_FILES UI/RightBar/RightBar.qml
+        QML_FILES UI/NavigationBar/NavigationBar.qml
         RESOURCES res.qrc
         SOURCES Controllers/system.h Controllers/system.cpp
 )

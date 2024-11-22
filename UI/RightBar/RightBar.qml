@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtLocation
 import QtPositioning
-
+import "../NavigationBar"
 Rectangle
 {
 
@@ -61,7 +61,9 @@ Rectangle
             }
     }
     Row
-    {   anchors
+    {
+        id:infoRow
+        anchors
         {
             top:parent.top
             left:parent.left
@@ -73,7 +75,7 @@ Rectangle
         Image {
             id: lockIcon
             source: systemHandler.carLocked? "qrc:/UI/Assets/lock.png":"qrc:/UI/Assets/unlock.png"
-            width:parent.width/8
+            width:parent.width/10
             fillMode: Image.PreserveAspectFit
             verticalAlignment: Image.AlignVCenter
             MouseArea
@@ -85,24 +87,43 @@ Rectangle
                 }
             }
         }
-
         Text
         {
-            text:systemHandler.temprature
+            text:"05:52 pm"
             verticalAlignment: Text.AlignVCenter
-            font.pixelSize: 18
+            font.pixelSize: 15
             height: lockIcon.height
+            font.bold:true
+        }
+        Text
+        {
+            text:systemHandler.temprature+"°F"
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 15
+            height: lockIcon.height
+            font.bold:true
         }
 
         Text
         {
             text:systemHandler.name
-            font.pixelSize: 18
+            font.pixelSize: 15
             verticalAlignment: Text.AlignVCenter
-
+            font.bold:true
         }
     }
 
+    NavigationBar
+    {
+        anchors
+        {
+            top:infoRow.bottom
+            left:infoRow.left
+            topMargin:25
+        }
+        width:parent.width*0.4
+        height:parent.height*0.08
+    }
 
     anchors
     {

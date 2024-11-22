@@ -5,5 +5,8 @@
         <file>UI/Assets/car-icon.png</file>
         <file>UI/Assets/lock.png</file>
         <file>UI/Assets/unlock.png</file>
+        <file>UI/NavigationBar/NavigationBar.qml</file>
+        <file>UI/Assets/search-interface-symbol-black.png</file>
+        <file>UI/Assets/search-interface-symbol-gray.png</file>
     </qresource>
 </RCC>

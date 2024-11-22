@@ -11,12 +11,14 @@ Rectangle
         bottom:bottomBar.top
         top:parent.top
     }
+
     Image
     {
+        id:carIcon
         source:"qrc:/UI/Assets/tesla.jpg"
         anchors.centerIn:parent
         fillMode:Image.PreserveAspectFit
-        width:parent.width*0.95
+        width:parent.width
 
     }
 }

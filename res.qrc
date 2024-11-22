@@ -8,5 +8,6 @@
         <file>UI/NavigationBar/NavigationBar.qml</file>
         <file>UI/Assets/search-interface-symbol-black.png</file>
         <file>UI/Assets/search-interface-symbol-gray.png</file>
+        <file>UI/Assets/user.png</file>
     </qresource>
 </RCC>

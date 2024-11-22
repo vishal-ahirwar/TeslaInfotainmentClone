@@ -89,7 +89,7 @@ Rectangle
         }
         Text
         {
-            text:"05:52 pm"
+            text:systemHandler.current_time
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 15
             height: lockIcon.height
@@ -103,7 +103,12 @@ Rectangle
             height: lockIcon.height
             font.bold:true
         }
-
+        Image {
+            source: "qrc:/UI/Assets/user.png"
+            width:parent.width/10
+            fillMode: Image.PreserveAspectFit
+            verticalAlignment: Image.AlignVCenter
+        }
         Text
         {
             text:systemHandler.name
@@ -121,8 +126,13 @@ Rectangle
             left:infoRow.left
             topMargin:25
         }
-        width:parent.width*0.4
-        height:parent.height*0.08
+        width:parent.width*0.3
+        height:parent.height*0.06
+        placeHolderText: "Navigate"
+        onSubmit:function(input)
+        {
+            console.debug("searching "+input)
+        }
     }
 
     anchors

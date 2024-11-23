@@ -102,6 +102,15 @@ Rectangle
             font.pixelSize: 15
             height: lockIcon.height
             font.bold:true
+            MouseArea
+            {
+                anchors.fill:parent
+                onClicked:
+                {
+                    weather.visible=! weather.visible
+                    username.visible=false
+                }
+            }
         }
         Image {
             source: "qrc:/UI/Assets/user.png"
@@ -115,6 +124,15 @@ Rectangle
             font.pixelSize: 15
             verticalAlignment: Text.AlignVCenter
             font.bold:true
+            MouseArea
+            {
+                anchors.fill:parent
+                onClicked:
+                {
+                    username.visible=!username.visible
+                    weather.visible=false
+                }
+            }
         }
     }
 
@@ -134,7 +152,46 @@ Rectangle
             console.debug("searching "+input)
         }
     }
-
+    NavigationBar
+    {
+        id:weather
+        visible:false
+        anchors
+        {
+            top:infoRow.bottom
+            left:infoRow.left
+            topMargin:25
+        }
+        width:parent.width*0.3
+        height:parent.height*0.06
+        placeHolderText: "Location Weather"
+        onSubmit:function(input)
+        {
+            visible=false
+        }
+    }
+    NavigationBar
+    {
+        id:username
+        visible:false
+        anchors
+        {
+            top:infoRow.bottom
+            left:infoRow.left
+            topMargin:25
+        }
+        width:parent.width*0.3
+        height:parent.height*0.06
+        placeHolderText: "Your Name"
+        onSubmit:function(input)
+        {
+            if(input.length>3)
+            {
+                systemHandler.setName(input)
+            }
+            visible=false
+        }
+    }
     anchors
     {
         right:parent.right

@@ -51,6 +51,7 @@ Rectangle
         onAccepted:
         {
             submit(text)
+            text=""
         }
     }
 

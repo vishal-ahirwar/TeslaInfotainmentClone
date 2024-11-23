@@ -9,7 +9,7 @@ Window {
     title: qsTr("Tesla Infotainment")
     Component.onCompleted:function()
     {
-        showFullScreen()
+        // showFullScreen()
     }
 
     BottomBar

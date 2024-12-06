@@ -4,13 +4,16 @@ project(TeslaInfotainmentClone VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTORCC ON)
+set(ANDROID_RES_DIR ${CMAKE_SOURCE_DIR}/android/res)
 find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appTeslaInfotainmentClone
     main.cpp
+     MANUAL_FINALIZATION
 )
+
 
 qt_add_qml_module(appTeslaInfotainmentClone
     URI TeslaInfotainmentClone
@@ -35,7 +38,9 @@ set_target_properties(appTeslaInfotainmentClone PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
-
+set_property(TARGET app${PROJECT_NAME} APPEND PROPERTY
+    QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android
+)
 target_link_libraries(appTeslaInfotainmentClone
     PRIVATE Qt6::Quick
 )
@@ -46,3 +51,5 @@ install(TARGETS appTeslaInfotainmentClone
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
+qt_finalize_executable(app${PROJECT_NAME})
